@@ -1,4 +1,5 @@
 'use strict';
+'use strict';
 var crypto = require('crypto');
 var path = require('path');
 var gutil = require('gulp-util');
@@ -134,7 +135,7 @@ plugin.manifest = function (pth, opts) {
 		}
 
 		firstFile = firstFile || file;
-		manifest[relPath(firstFile.revOrigBase, file.revOrigPath)] = relPath(firstFile.base, file.path);
+		manifest[relPath(file.revOrigBase, file.revOrigPath)] = relPath(file.base, file.path);
 
 		cb();
 	}, function (cb) {
@@ -168,3 +169,4 @@ plugin.manifest = function (pth, opts) {
 };
 
 module.exports = plugin;
+
